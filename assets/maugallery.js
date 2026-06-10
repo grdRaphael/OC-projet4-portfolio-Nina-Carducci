@@ -151,7 +151,6 @@
       $(imagesCollection).each(function (i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
           index = i;
-          console.log(index)
         }
       });
       next =
