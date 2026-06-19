@@ -117,7 +117,8 @@
       $(`#${lightboxId}`)
         .find(".lightboxImage")
         .attr("src", element.attr("src"));
-      $(`#${lightboxId}`).modal("toggle");
+      /*$(`#${lightboxId}`).modal("toggle"); avant minification de boostrap.bundle.js*/
+      bootstrap.Modal.getOrCreateInstance(document.getElementById(lightboxId)).toggle();
     },
     prevImage() {
       let activeImage = null;
@@ -189,7 +190,7 @@
 
       $(imagesCollection).each(function (i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i;
         }
       });
       next = imagesCollection[index + 1] || imagesCollection[0];
